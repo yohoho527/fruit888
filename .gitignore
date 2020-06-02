@@ -1,6 +1,14 @@
 /node_modules
 /public/hot
 /public/storage
+/public/css
+/public/demos
+/public/include
+/public/images
+/public/js
+/public/less
+/public/sass
+/public/one-page
 /storage/*.key
 /vendor
 .env
