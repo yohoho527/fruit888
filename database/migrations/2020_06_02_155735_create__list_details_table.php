@@ -31,6 +31,11 @@ class CreateListDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('listdetails');
+        Schema::table('details', function (Blueprint $table) {
+            $table->dropForeign(['list_id']);
+
+            $table->dropColumn('list_id');
+        });
+        Schema::dropIfExists('details');
     }
 }
