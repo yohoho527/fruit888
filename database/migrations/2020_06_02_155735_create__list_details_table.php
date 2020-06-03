@@ -16,8 +16,8 @@ class CreateListDetailsTable extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('pName');
-            $table->integer('pNum');
+            $table->integer('pName')->comment('商品名稱');
+            $table->integer('pNum')->comment('購買數量');
             $table->unsignedBigInteger('list_id');
             $table->foreign('list_id')->references('id')->on('lists')->onDelete('cascade');
 

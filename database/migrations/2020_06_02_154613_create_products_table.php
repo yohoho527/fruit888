@@ -17,14 +17,14 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('pName')->comment('品名');
-            $table->string('pType');
-            $table->integer('pPrice');
-            $table->string('pPlace');
-            $table->text('pIntro');
-            $table->text('pBimg');
-            $table->longText('pSimg');
-            $table->string('pUnit', 20);
-            $table->text('pRemark');
+            $table->string('pType')->comment('分類');
+            $table->integer('pPrice')->comment('價錢');
+            $table->string('pPlace')->comment('產地');
+            $table->text('pIntro')->comment('簡介');
+            $table->text('pBimg')->comment('商品主圖');
+            $table->longText('pSimg')->comment('商品其他圖片');
+            $table->string('pUnit', 20)->comment('單位');
+            $table->text('pRemark')->comment('備註')->nullable();
         });
     }
 
