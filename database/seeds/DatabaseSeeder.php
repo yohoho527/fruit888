@@ -33,7 +33,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ExampleTranslationsTableSeeder::class);
         $this->call(ExampleUsersTableSeeder::class);
 
-        $this->call(ProductsTableSeeder::class);
         //安裝範例資料結束===============================
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 

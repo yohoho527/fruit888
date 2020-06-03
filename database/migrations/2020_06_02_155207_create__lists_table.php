@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
 class CreateListsTable extends Migration
 {
@@ -13,14 +11,14 @@ class CreateListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lists', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->Integer('iTotalPrice')->comment("總價");
-            $table->timestamps();
+        // Schema::create('lists', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->unsignedBigInteger('user_id');
+        //     $table->Integer('iTotalPrice')->comment("總價");
+        //     $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
+        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        // });
     }
 
     /**
@@ -30,10 +28,10 @@ class CreateListsTable extends Migration
      */
     public function down()
     {
-        Schema::table('lists', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropColumn('user_id');
-        });
-        Schema::dropIfExists('lists');
+        // Schema::table('lists', function (Blueprint $table) {
+        //     $table->dropForeign(['user_id']);
+        //     $table->dropColumn('user_id');
+        // });
+        // Schema::dropIfExists('lists');
     }
 }

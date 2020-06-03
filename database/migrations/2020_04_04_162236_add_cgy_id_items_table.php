@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddCgyIdItemsTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddCgyIdItemsTable extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->unsignedBigInteger('cgy_id')->index();
+            $table->unsignedBigInteger('cgy_id')->index()->comment('分類編號');
             $table->foreign('cgy_id')->references('id')->on('cgies')->onDelete('cascade');
         });
     }
